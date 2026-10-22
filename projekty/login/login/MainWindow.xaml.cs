@@ -20,11 +20,18 @@ namespace login
 
     public partial class MainWindow : Window
     {
+        //TODO- DATA CONTEXT FOR DATA BINDINGS//
+        private string login;
+        private string pass;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            login = "aaa";
+            pass = "aaa";
+        }
     }
 }

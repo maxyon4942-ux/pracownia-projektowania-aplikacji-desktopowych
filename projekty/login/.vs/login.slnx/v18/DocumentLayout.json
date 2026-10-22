@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F18CC9E6-50B6-1C14-5BA1-54013BC5B829}|login\\login.csproj|c:\\users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F18CC9E6-50B6-1C14-5BA1-54013BC5B829}|login\\login.csproj|solutionrelative:login\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F18CC9E6-50B6-1C14-5BA1-54013BC5B829}|login\\login.csproj|c:\\users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F18CC9E6-50B6-1C14-5BA1-54013BC5B829}|login\\login.csproj|solutionrelative:login\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F18CC9E6-50B6-1C14-5BA1-54013BC5B829}|login\\login.csproj|c:\\users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F18CC9E6-50B6-1C14-5BA1-54013BC5B829}|login\\login.csproj|solutionrelative:login\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,25 +78,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml",
               "RelativeDocumentMoniker": "login\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml",
-              "RelativeToolTip": "login\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml*",
+              "RelativeToolTip": "login\\MainWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-10-22T09:55:08.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "login\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "login\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml.cs",
+              "RelativeToolTip": "login\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-22T09:55:06.43Z",
               "EditorCaption": ""

@@ -94,11 +94,12 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "login\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml.cs",
-              "RelativeToolTip": "login\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\maxyo\\source\\repos\\git-projects\\desktop\\projekty\\login\\login\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "login\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-22T09:55:06.43Z"
+              "WhenOpened": "2026-10-22T09:55:06.43Z",
+              "EditorCaption": ""
             }
           ]
         }
