@@ -2,7 +2,6 @@
 using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Controls;
-using Label = System.Windows.Controls.Label;
 
 namespace _00_elektro_bud
 {
@@ -18,7 +17,7 @@ namespace _00_elektro_bud
         {
             InitializeComponent();
             MiejsceWMagazynie m = new("A01", "C431", "43");
-            Produkt p = new("34298423432", "Pomidor", "Warzywa", m);
+            Produkt p = new("3429842343223", "Pomidor", "Warzywa", m);
             Produkt p2 = new("300432", "Jablko", "Owoce", m);
             Produkt p3 = new("6453543", "Sofa", "Meble", m);
             Produkt p4 = new("111111102", "Komputer", "Elektronika", m);
@@ -59,6 +58,7 @@ namespace _00_elektro_bud
 
                 pc.NazwaProduktu = p.nazwa;
                 pc.KodEAN = p.kodEAN;
+                pc.Margin = new Thickness(0, 10, 0, 10);
                 grid.Children.Add(pc);
                 grid.Children.Add(b);
                 itmKatalog.Items.Add(grid);
@@ -100,6 +100,12 @@ namespace _00_elektro_bud
         private void WyswietlInformacjeOProdukcie(Produkt p)
         {
 
+        }
+
+        private void wndGlowne_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            txtKatalogTytul.FontSize = wndGlowne.ActualWidth / 40;
+            txtInformacjeTytul.FontSize = wndGlowne.ActualWidth / 40;
         }
     }
 }

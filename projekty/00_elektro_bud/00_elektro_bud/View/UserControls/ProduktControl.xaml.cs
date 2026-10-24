@@ -45,7 +45,12 @@ namespace _00_elektro_bud.View.UserControls
             }
         }
 
-
-
+        private void wndProdukt_SizeChanged(object sender, System.Windows.SizeChangedEventArgs e)
+        {
+            txtNazwa.FontSize = Math.Round(wndProdukt.ActualWidth / 10);
+            txtEAN.FontSize = Math.Round(wndProdukt.ActualWidth / 15);
+            txtNazwaTytul.FontSize = Math.Round(wndProdukt.ActualWidth / 40);
+            txtEANTytul.FontSize = Math.Round(wndProdukt.ActualWidth / 40);
+        }
     }
 }

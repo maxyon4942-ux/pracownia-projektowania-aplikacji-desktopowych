@@ -7,7 +7,10 @@
         xmlns:UserControls="clr-namespace:_00_elektro_bud.View.UserControls"
         mc:Ignorable="d"
         Background="#EBF0F5"
-        Title="MainWindow" Height="450" Width="800">
+        Name="wndGlowne"
+        SizeChanged="wndGlowne_SizeChanged"
+        MinHeight="330" MinWidth="520"
+        Title="Katalog produktów" Height="450" Width="800">
     <!--Zmiana domyślnego wyglądu przycisku na niewidoczny bez podświetlenia-->
     <Window.Resources>
         <Style TargetType="Button">
@@ -45,8 +48,8 @@
                 <RowDefinition Height="80*" MaxHeight="32"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.RowSpan="4" Content="Katalog Produktów" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="Wyszukaj za pomocą: " Grid.Column="2" Grid.RowSpan="2" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="txtKatalogTytul" Grid.Column="0" Grid.RowSpan="4" Text="Katalog Produktów" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+            <TextBlock Text="Wyszukaj za pomocą: " Grid.Column="2" Grid.RowSpan="2" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextWrapping="Wrap"/>
             <TextBox TextChanged="txtWyszukaj_TextChanged" VerticalContentAlignment="Center" Name="txtWyszukaj" Grid.Column="1" Grid.Row="2" Margin="5 0 0 5"/>
             <ComboBox SelectedIndex="0" SelectionChanged="cmbTrybWyszukiwania_SelectionChanged" VerticalContentAlignment="Center" Name="cmbTrybWyszukiwania" Grid.Column="2" Grid.Row="2" Margin="5 0 0 5">
                 <ComboBoxItem Content="Nazwy"/>
@@ -57,13 +60,12 @@
         <Rectangle Fill="White" Grid.Row="1" Grid.Column="1"/>
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="2">
             <Grid>
-                <Rectangle Name="rtgBrakWyszukanych" Fill="Black" Opacity="0.3"/>
-                <Label Name="txtBrakWyszukanych" Content="Brak produktów spełniających kryteria wyszukiwania" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Hidden"/>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                <Rectangle Name="rtgBrakWyszukanych" Fill="Black" Opacity="0.3" Panel.ZIndex="1"/>
+                <TextBlock Name="txtBrakWyszukanych" Text="Brak produktów spełniających kryteria wyszukiwania" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Hidden" TextAlignment="Center" TextWrapping="Wrap" Panel.ZIndex="2" Padding="10"/>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="5">
                     <StackPanel>
                         <ItemsControl Name="itmKatalog">
-                            <Grid>
-                                <UserControls:ProduktControl/>
+                            <Grid> 
                                 <Button Panel.ZIndex="1" Click="ProduktKlikniety"/>
                             </Grid>
                         </ItemsControl>
@@ -72,13 +74,13 @@
             </Grid>
         </Border>
         <!--Informacje o produkcie-->
-        <Label FontSize="20" Content="Informacje o produkcie:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Name="txtInformacjeTytul" FontSize="20" Text="Informacje o produkcie" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" TextWrapping="Wrap"/>
         <Rectangle Fill="White" Grid.Row="1" Grid.Column="2" Margin="15 0"/>
         <Border Grid.Row="1" Grid.Column="2" BorderBrush="Silver" BorderThickness="2" Margin="15 0">
             <Grid>
-                <Rectangle Name="rtgBrakWybranego" Fill="Black" Opacity="0.3"/>
-                <TextBlock Name="txtBrakWybranego" Text="Wybierz produkt aby wyświetlić o nim informacje" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Visible" TextWrapping="Wrap" TextAlignment="Center" Padding="10"/>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                <Rectangle Name="rtgBrakWybranego" Fill="Black" Opacity="0.3" Panel.ZIndex="1"/>
+                <TextBlock Name="txtBrakWybranego" Text="Wybierz produkt aby wyświetlić o nim informacje" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Visible" TextWrapping="Wrap" TextAlignment="Center" Panel.ZIndex="2" Padding="10"/>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="5">
                 </ScrollViewer>
             </Grid>
         </Border>
