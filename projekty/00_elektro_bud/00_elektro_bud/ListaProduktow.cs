@@ -19,7 +19,7 @@ namespace _00_elektro_bud
                 if (metoda == "nazwa") tekstDoWyszukania = p.nazwa.ToLower();
                 else if (metoda == "EAN") tekstDoWyszukania = p.kodEAN.ToLower();
                 else return null;
-                if (p.nazwa.ToLower().Contains(tekst.ToLower()))
+                if (tekstDoWyszukania.Contains(tekst.ToLower()))
                 {
                     pLista.Add(p);
                 }
