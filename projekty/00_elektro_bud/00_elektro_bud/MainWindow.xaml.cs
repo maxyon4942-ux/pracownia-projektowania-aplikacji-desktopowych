@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using _00_elektro_bud.View.UserControls;
+using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Controls;
 using Label = System.Windows.Controls.Label;
@@ -8,6 +9,11 @@ namespace _00_elektro_bud
     public partial class MainWindow : Window
     {
         private string metodaWyszukiwania;
+        Dictionary<Button, Produkt> dic = new();
+        //dictionary łączące przycisk produktu z obiektem klasy produkt
+        Dictionary<Button, ProduktControl> dic2 = new();
+        //dictionary łączące kontrolke produktu z przyciskiem
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,27 +38,21 @@ namespace _00_elektro_bud
             itmKatalog.Items.Clear();
             if (produkty.Count == 0) txtBrakWyszukanych.Visibility = Visibility.Visible;
             else txtBrakWyszukanych.Visibility = Visibility.Hidden;
+            dic.Clear(); 
             foreach (Produkt p in produkty)
             {
+                Button b = new();
+                b.Click += produktKlikniety;
+                dic.Add(b, p);
+
                 Grid grid = new();
-                ColumnDefinition c = new();
-                c.Width = new GridLength(1, GridUnitType.Star);
-                ColumnDefinition c1 = new();
-                c1.Width = new GridLength(1, GridUnitType.Star);
-                grid.ColumnDefinitions.Add(c);
-                grid.ColumnDefinitions.Add(c1);
-                Label l = new();
-                l.Content = p.nazwa;
-                l.FontSize = 20;
-                l.HorizontalAlignment = HorizontalAlignment.Center;
-                Label l2 = new();
-                l2.Content = p.kodEAN;
-                l2.FontSize = 20;
-                l2.HorizontalAlignment = HorizontalAlignment.Center;
-                Grid.SetColumn(l, 0);
-                Grid.SetColumn(l2, 1);
-                grid.Children.Add(l);
-                grid.Children.Add(l2);
+                ProduktControl pc = new();
+                dic2.Add(b, pc);
+
+                pc.NazwaProduktu = p.nazwa;
+                pc.KodEAN = p.kodEAN;
+                grid.Children.Add(pc);
+                grid.Children.Add(b);
                 itmKatalog.Items.Add(grid);
             }
         }
@@ -70,6 +70,16 @@ namespace _00_elektro_bud
                 default:
                     return;
             }
+        }
+
+        private void produktKlikniety(object sender, RoutedEventArgs e)
+        {
+            Button? przyciskProduktu = sender as Button;
+            if (przyciskProduktu == null) return;
+            Produkt obiektProduktu = dic[przyciskProduktu];
+            ProduktControl kontrolkaProduktu = dic2[przyciskProduktu];
+            kontrolkaProduktu.Tlo = !kontrolkaProduktu.Tlo;
+            MessageBox.Show(obiektProduktu.nazwa);
         }
     }
 }

@@ -1,41 +1,48 @@
 ﻿using System.Windows.Controls;
-using System.ComponentModel;
+using Brushes = System.Windows.Media.Brushes;
 
 namespace _00_elektro_bud.View.UserControls
 {
-    public partial class ProduktControl : UserControl, INotifyPropertyChanged 
+    public partial class ProduktControl : UserControl
     {
         public ProduktControl()
         {
             DataContext = this;
             InitializeComponent();
         }
-        private string titleOne;
-        public string  TitleOne
-        {
-            get { return titleOne; }
-            set { titleOne = value; }
-        }
-        private string titleTwo;
-        public string TitleTwo
-        {
-            get { return titleTwo; }
-            set { titleTwo = value; }
-        }
-        private string nameOne;
-        public string NameOne
-        {
-            get { return nameOne; }
-            set { nameOne = value; }
-        }
-        private string nameTwo;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        private bool tlo;
 
-        public string NameTwo
+        public bool Tlo
         {
-            get { return nameTwo; }
-            set { nameTwo = value; }
+            get { return tlo; }
+            set { tlo = value;
+            if(!tlo)
+                {
+                    rtgTlo.Fill = Brushes.Transparent;
+                } else
+                {
+                    rtgTlo.Fill = Brushes.Red;
+                }
+            }
+        }
+
+        private string nazwaProduktu;
+        public string NazwaProduktu
+        {
+            get { return nazwaProduktu; }
+            set { nazwaProduktu = value;
+                txtNazwa.Content = value;
+            }
+        }
+        private string kodEAN;
+
+        public string KodEAN
+        {
+            get { return kodEAN; }
+            set { kodEAN = value;
+                txtEAN.Content = value;
+            }
         }
 
 

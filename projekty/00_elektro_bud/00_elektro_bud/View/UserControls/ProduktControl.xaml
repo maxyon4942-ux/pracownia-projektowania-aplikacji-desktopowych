@@ -15,10 +15,10 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="Wheat" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Rectangle x:Name="rtgTlo" Fill="Transparent" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <Label Content="Nazwa Produktu:" FontWeight="Bold" VerticalAlignment="Bottom"/>
         <Label Grid.Column="1" Content="Kod EAN Produktu:" FontWeight="Bold" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="0" FontSize="40" Grid.Row="1" Content="Produkt" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="1" FontSize="40" Grid.Row="1" Content="0000000000000" VerticalAlignment="Bottom"/>
+        <Label x:Name="txtNazwa" Grid.Column="0" FontSize="40" Grid.Row="1" Content="Produkt" VerticalAlignment="Bottom"/>
+        <Label x:Name="txtEAN" Grid.Column="1" FontSize="40" Grid.Row="1" Content="0000000000000" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

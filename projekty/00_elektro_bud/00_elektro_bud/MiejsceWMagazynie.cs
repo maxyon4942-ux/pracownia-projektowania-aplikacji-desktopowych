@@ -6,9 +6,9 @@ namespace _00_elektro_bud
 {
     internal class MiejsceWMagazynie
     {
-        private string sektor;
-        private string regal;
-        private string polka;
+        public string sektor;
+        public string regal;
+        public string polka;
 
         public MiejsceWMagazynie(string sektor, string regal, string polka)
         {

@@ -8,12 +8,14 @@
         mc:Ignorable="d"
         Background="#EBF0F5"
         Title="MainWindow" Height="450" Width="800">
-    <!--Styleless button-->
+    <!--Zmiana domyślnego wyglądu przycisku na niewidoczny bez podświetlenia-->
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button"/>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent"></Border>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
@@ -30,7 +32,7 @@
             <ColumnDefinition Width="32*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <!--Top left-->
+        <!--Góra-->
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40*"/>
@@ -61,7 +63,7 @@
                         <ItemsControl Name="itmKatalog">
                             <Grid>
                                 <UserControls:ProduktControl/>
-                                <Button/>
+                                <Button Panel.ZIndex="1" Click="produktKlikniety"/>
                             </Grid>
                         </ItemsControl>
                     </StackPanel>
