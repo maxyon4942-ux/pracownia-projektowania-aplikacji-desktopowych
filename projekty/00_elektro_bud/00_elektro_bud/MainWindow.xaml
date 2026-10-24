@@ -4,9 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_00_elektro_bud"
+        xmlns:UserControls="clr-namespace:_00_elektro_bud.View.UserControls"
         mc:Ignorable="d"
         Background="#EBF0F5"
         Title="MainWindow" Height="450" Width="800">
+    <!--Styleless button-->
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>
@@ -49,12 +60,8 @@
                     <StackPanel>
                         <ItemsControl Name="itmKatalog">
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Label Content="Produkt 1" FontSize="20" Margin="10"/>
-                                <Label Grid.Column="1" Content="5435355455" FontSize="20" Margin="10"/>
+                                <UserControls:ProduktControl/>
+                                <Button/>
                             </Grid>
                         </ItemsControl>
                     </StackPanel>
