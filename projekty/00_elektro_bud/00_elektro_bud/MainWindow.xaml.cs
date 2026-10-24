@@ -36,13 +36,21 @@ namespace _00_elektro_bud
         private void WyswietlProdukty(List<Produkt> produkty)
         {
             itmKatalog.Items.Clear();
-            if (produkty.Count == 0) txtBrakWyszukanych.Visibility = Visibility.Visible;
-            else txtBrakWyszukanych.Visibility = Visibility.Hidden;
+            if (produkty.Count == 0)
+            {
+                txtBrakWyszukanych.Visibility = Visibility.Visible;
+                rtgBrakWyszukanych.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                txtBrakWyszukanych.Visibility = Visibility.Hidden;
+                rtgBrakWyszukanych.Visibility = Visibility.Hidden;
+            }
             dic.Clear(); 
             foreach (Produkt p in produkty)
             {
                 Button b = new();
-                b.Click += produktKlikniety;
+                b.Click += ProduktKlikniety;
                 dic.Add(b, p);
 
                 Grid grid = new();
@@ -72,14 +80,26 @@ namespace _00_elektro_bud
             }
         }
 
-        private void produktKlikniety(object sender, RoutedEventArgs e)
+        private void ProduktKlikniety(object sender, RoutedEventArgs e)
         {
             Button? przyciskProduktu = sender as Button;
             if (przyciskProduktu == null) return;
             Produkt obiektProduktu = dic[przyciskProduktu];
             ProduktControl kontrolkaProduktu = dic2[przyciskProduktu];
+            foreach(var pc in dic2)
+            {
+                if(pc.Value.Tlo)
+                {
+                    pc.Value.Tlo = false;
+                }
+            }
             kontrolkaProduktu.Tlo = !kontrolkaProduktu.Tlo;
-            MessageBox.Show(obiektProduktu.nazwa);
+            WyswietlInformacjeOProdukcie(obiektProduktu);
+        }
+
+        private void WyswietlInformacjeOProdukcie(Produkt p)
+        {
+
         }
     }
 }
