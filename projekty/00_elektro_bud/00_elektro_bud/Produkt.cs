@@ -6,10 +6,10 @@ namespace _00_elektro_bud
 {
     internal class Produkt
     {
-        private string kodEAN { get; }
-        private string nazwa { get; }
-        private string kategoria { get; }
-        private MiejsceWMagazynie miejscePrzechowania { get; }
+        public string kodEAN;
+        public string nazwa;
+        public string kategoria;
+        public MiejsceWMagazynie miejscePrzechowania;
 
         public Produkt(string kodEAN, string nazwa, string kategoria, MiejsceWMagazynie miejscePrzechowania)
         {
@@ -17,6 +17,7 @@ namespace _00_elektro_bud
             this.nazwa = nazwa;
             this.kategoria = kategoria;
             this.miejscePrzechowania = miejscePrzechowania;
-        }     
+            ListaProduktow.lista.Add(this);
+        } 
     }
 }
