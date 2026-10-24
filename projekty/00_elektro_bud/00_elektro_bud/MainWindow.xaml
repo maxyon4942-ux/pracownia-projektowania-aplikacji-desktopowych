@@ -44,18 +44,21 @@
         <Rectangle Fill="White" Grid.Row="1" Grid.Column="1"/>
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="2">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
-                <StackPanel>
-                    <ItemsControl Name="itmKatalog">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Label Content="Produkt 1" FontSize="20" Margin="10"/>
-                            <Label Grid.Column="1" Content="5435355455" FontSize="20" Margin="10"/>
-                        </Grid>
-                    </ItemsControl>
-                </StackPanel>
+                <Grid>
+                    <Label Name="txtBrakWyszukanych" Content="Brak produktów spełniających kryteria wyszukiwania" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Hidden"/>
+                    <StackPanel>
+                        <ItemsControl Name="itmKatalog">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Produkt 1" FontSize="20" Margin="10"/>
+                                <Label Grid.Column="1" Content="5435355455" FontSize="20" Margin="10"/>
+                            </Grid>
+                        </ItemsControl>
+                    </StackPanel>
+                </Grid>
             </ScrollViewer>
         </Border>
         <!--Informacje o produkcie-->

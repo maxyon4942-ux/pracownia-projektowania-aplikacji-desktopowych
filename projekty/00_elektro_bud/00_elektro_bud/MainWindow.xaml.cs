@@ -21,17 +21,18 @@ namespace _00_elektro_bud
 
         private void txtWyszukaj_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            MessageBox.Show(metodaWyszukiwania);
             List<Produkt>? wyszukaneProdukty = ListaProduktow.Wyszukaj(metodaWyszukiwania, txtWyszukaj.Text);
             if (wyszukaneProdukty == null) return;
             itmKatalog.Items.Clear();
             WyswietlProdukty(wyszukaneProdukty);
         }
 
-        private void WyswietlProdukty(List<Produkt> produkt)
+        private void WyswietlProdukty(List<Produkt> produkty)
         {
             itmKatalog.Items.Clear();
-            foreach (Produkt p in produkt)
+            if (produkty.Count == 0) txtBrakWyszukanych.Visibility = Visibility.Visible;
+            else txtBrakWyszukanych.Visibility = Visibility.Hidden;
+            foreach (Produkt p in produkty)
             {
                 Grid grid = new();
                 ColumnDefinition c = new();
@@ -62,11 +63,9 @@ namespace _00_elektro_bud
             {
                 case 0:
                     metodaWyszukiwania = "nazwa";
-                    MessageBox.Show("a");
                     return;
                 case 1:
                     metodaWyszukiwania = "EAN";
-                    MessageBox.Show("b");
                     return;
                 default:
                     return;
