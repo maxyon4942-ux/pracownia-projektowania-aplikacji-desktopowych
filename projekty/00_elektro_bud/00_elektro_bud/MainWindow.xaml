@@ -78,9 +78,21 @@
         <Rectangle Fill="White" Grid.Row="1" Grid.Column="2" Margin="15 0"/>
         <Border Grid.Row="1" Grid.Column="2" BorderBrush="Silver" BorderThickness="2" Margin="15 0">
             <Grid>
-                <Rectangle Name="rtgBrakWybranego" Fill="Black" Opacity="0.3" Panel.ZIndex="1"/>
-                <TextBlock Name="txtBrakWybranego" Text="Wybierz produkt aby wyświetlić o nim informacje" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Visible" TextWrapping="Wrap" TextAlignment="Center" Panel.ZIndex="2" Padding="10"/>
+                <Rectangle Name="rtgBrakWybranego" Fill="Black" Opacity="0.3" Panel.ZIndex="1" Visibility="Hidden"/>
+                <TextBlock Name="txtBrakWybranego" Text="Wybierz produkt aby wyświetlić o nim informacje" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Hidden" TextWrapping="Wrap" TextAlignment="Center" Panel.ZIndex="2" Padding="10"/>
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="5">
+                    <StackPanel>
+                        <Label Name="txtL1" Content="Nazwa:" FontWeight="Bold" VerticalAlignment="Bottom"/>
+                        <TextBlock Name="txtNazwa" FontSize="20" Text="TestName" VerticalAlignment="Bottom" Margin="5 0 0 0"/>
+                        <Label Name="txtL2" Content="Kod EAN:" FontWeight="Bold" VerticalAlignment="Bottom"/>
+                        <TextBlock Name="txtEAN" FontSize="20" Text="TestName" VerticalAlignment="Bottom" Margin="5 0 0 0"/>
+                        <Label Name="txtL3" Content="Kategoria:" FontWeight="Bold" VerticalAlignment="Bottom"/>
+                        <TextBlock Name="txtKategoria" FontSize="20" Text="TestName" VerticalAlignment="Bottom" Margin="5 0 0 0"/>
+                        <Label Name="txtL4" Visibility="Hidden" Content="Miejsce w magazynie:" FontWeight="Bold" VerticalAlignment="Bottom"/>
+                        <TextBlock Name="txtSektor" Text="- test" VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtRegal" Text="- test" VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtPolka" Text="- test"  VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0"/>
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
         </Border>

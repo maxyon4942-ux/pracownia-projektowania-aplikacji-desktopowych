@@ -17,11 +17,15 @@ namespace _00_elektro_bud
         {
             InitializeComponent();
             MiejsceWMagazynie m = new("A01", "C431", "43");
+            MiejsceWMagazynie m1 = new("B432", "C01", "08");
+            MiejsceWMagazynie m2 = new("G002", "C01", "08");
+            MiejsceWMagazynie m3 = new("E042", "E05", "99");
             Produkt p = new("3429842343223", "Pomidor", "Warzywa", m);
-            Produkt p2 = new("300432", "Jablko", "Owoce", m);
-            Produkt p3 = new("6453543", "Sofa", "Meble", m);
-            Produkt p4 = new("111111102", "Komputer", "Elektronika", m);
+            Produkt p2 = new("300432", "Jablko", "Owoce", m1);
+            Produkt p3 = new("6453543", "Sofa", "Meble", m2);
+            Produkt p4 = new("111111102", "Komputer", "Elektronika", m3);
             WyswietlProdukty(ListaProduktow.lista);
+            WyswietlInformacjeOProdukcie(null);
         }
 
         private void txtWyszukaj_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -88,18 +92,48 @@ namespace _00_elektro_bud
             ProduktControl kontrolkaProduktu = dic2[przyciskProduktu];
             foreach(var pc in dic2)
             {
+                if (pc.Key == przyciskProduktu) continue;
                 if(pc.Value.Tlo)
                 {
                     pc.Value.Tlo = false;
                 }
             }
             kontrolkaProduktu.Tlo = !kontrolkaProduktu.Tlo;
-            WyswietlInformacjeOProdukcie(obiektProduktu);
+            WyswietlInformacjeOProdukcie(obiektProduktu, !kontrolkaProduktu.Tlo);
         }
 
-        private void WyswietlInformacjeOProdukcie(Produkt p)
+        private void WyswietlInformacjeOProdukcie(Produkt? p, bool czyWybrany = false)
         {
+            if(p == null || czyWybrany)
+            {
+                txtBrakWybranego.Visibility = Visibility.Visible;
+                rtgBrakWybranego.Visibility = Visibility.Visible;
+                txtNazwa.Text = "";
+                txtEAN.Text = "";
+                txtKategoria.Text = "";
+                txtSektor.Text = "";
+                txtRegal.Text = "";
+                txtPolka.Text = "";
+                txtL1.Visibility = Visibility.Hidden;
+                txtL2.Visibility = Visibility.Hidden;
+                txtL3.Visibility = Visibility.Hidden;
+                txtL4.Visibility = Visibility.Hidden;
+                return;
+            }
+            txtNazwa.Text = p.nazwa;
+            txtEAN.Text = p.kodEAN;
+            txtKategoria.Text = p.kategoria;
+            txtSektor.Text = "Sektor: " + p.miejscePrzechowania.sektor;
+            txtRegal.Text = "Regał: " + p.miejscePrzechowania.regal;
+            txtPolka.Text = "Półka: " + p.miejscePrzechowania.polka;
 
+            txtL1.Visibility = Visibility.Visible;
+            txtL2.Visibility = Visibility.Visible;
+            txtL3.Visibility = Visibility.Visible;
+            txtL4.Visibility = Visibility.Visible;
+
+            txtBrakWybranego.Visibility = Visibility.Hidden;
+            rtgBrakWybranego.Visibility = Visibility.Hidden;
         }
 
         private void wndGlowne_SizeChanged(object sender, SizeChangedEventArgs e)
