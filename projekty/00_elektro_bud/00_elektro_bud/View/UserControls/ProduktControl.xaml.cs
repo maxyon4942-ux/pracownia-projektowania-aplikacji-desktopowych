@@ -10,6 +10,9 @@ namespace _00_elektro_bud.View.UserControls
         {
             DataContext = this;
             InitializeComponent();
+
+            nazwaProduktu = "Produkt";
+            kodEAN = "0000000000000";
         }
 
         private bool tlo;

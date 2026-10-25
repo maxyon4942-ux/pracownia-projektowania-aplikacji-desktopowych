@@ -19,6 +19,8 @@ namespace _00_elektro_bud
             ListaProduktow.ZainicjujProdukty();
             WyswietlProdukty(ListaProduktow.lista);
             WyswietlInformacjeOProdukcie(null);
+
+            metodaWyszukiwania = "nazwa";
         }
 
         private void txtWyszukaj_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
