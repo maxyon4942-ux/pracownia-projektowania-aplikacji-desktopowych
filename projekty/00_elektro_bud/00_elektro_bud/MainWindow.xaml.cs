@@ -16,14 +16,7 @@ namespace _00_elektro_bud
         public MainWindow()
         {
             InitializeComponent();
-            MiejsceWMagazynie m = new("A01", "C431", "43");
-            MiejsceWMagazynie m1 = new("B432", "C01", "08");
-            MiejsceWMagazynie m2 = new("G002", "C01", "08");
-            MiejsceWMagazynie m3 = new("E042", "E05", "99");
-            Produkt p = new("3429842343223", "Pomidor", "Warzywa", m);
-            Produkt p2 = new("300432", "Jablko", "Owoce", m1);
-            Produkt p3 = new("6453543", "Sofa", "Meble", m2);
-            Produkt p4 = new("111111102", "Komputer", "Elektronika", m3);
+            ListaProduktow.ZainicjujProdukty();
             WyswietlProdukty(ListaProduktow.lista);
             WyswietlInformacjeOProdukcie(null);
         }
@@ -138,8 +131,20 @@ namespace _00_elektro_bud
 
         private void wndGlowne_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            txtKatalogTytul.FontSize = wndGlowne.ActualWidth / 40;
-            txtInformacjeTytul.FontSize = wndGlowne.ActualWidth / 40;
+            double nowyRozmiar = wndGlowne.ActualWidth / 40;
+            txtKatalogTytul.FontSize = nowyRozmiar;
+            txtInformacjeTytul.FontSize = nowyRozmiar;
+            txtNazwa.FontSize = nowyRozmiar;
+            txtEAN.FontSize = nowyRozmiar;
+            txtKategoria.FontSize = nowyRozmiar;
+            txtSektor.FontSize = nowyRozmiar;
+            txtRegal.FontSize = nowyRozmiar;
+            txtPolka.FontSize = nowyRozmiar;
+            nowyRozmiar = wndGlowne.ActualWidth / 66;
+            txtL1.FontSize = nowyRozmiar;
+            txtL2.FontSize = nowyRozmiar;
+            txtL3.FontSize = nowyRozmiar;
+            txtL4.FontSize = nowyRozmiar;
         }
     }
 }

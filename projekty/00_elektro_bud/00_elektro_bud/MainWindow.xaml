@@ -83,15 +83,15 @@
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="5">
                     <StackPanel>
                         <Label Name="txtL1" Content="Nazwa:" FontWeight="Bold" VerticalAlignment="Bottom"/>
-                        <TextBlock Name="txtNazwa" FontSize="20" Text="TestName" VerticalAlignment="Bottom" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtNazwa" FontSize="20" Text="TestName" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="5 0 0 0"/>
                         <Label Name="txtL2" Content="Kod EAN:" FontWeight="Bold" VerticalAlignment="Bottom"/>
-                        <TextBlock Name="txtEAN" FontSize="20" Text="TestName" VerticalAlignment="Bottom" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtEAN" FontSize="20" Text="TestName" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="5 0 0 0"/>
                         <Label Name="txtL3" Content="Kategoria:" FontWeight="Bold" VerticalAlignment="Bottom"/>
-                        <TextBlock Name="txtKategoria" FontSize="20" Text="TestName" VerticalAlignment="Bottom" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtKategoria" FontSize="20" Text="TestName" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="5 0 0 0"/>
                         <Label Name="txtL4" Visibility="Hidden" Content="Miejsce w magazynie:" FontWeight="Bold" VerticalAlignment="Bottom"/>
-                        <TextBlock Name="txtSektor" Text="- test" VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0"/>
-                        <TextBlock Name="txtRegal" Text="- test" VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0"/>
-                        <TextBlock Name="txtPolka" Text="- test"  VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtSektor" Text="- test" VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0" TextWrapping="Wrap"/>
+                        <TextBlock Name="txtRegal" Text="- test" VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0" TextWrapping="Wrap"/>
+                        <TextBlock Name="txtPolka" Text="- test"  VerticalAlignment="Bottom" FontSize="20" Margin="5 0 0 0" TextWrapping="Wrap"/>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
