@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using Brushes = System.Windows.Media.Brushes;
 
 namespace _00_elektro_bud.View.UserControls
@@ -19,10 +20,12 @@ namespace _00_elektro_bud.View.UserControls
             set { tlo = value;
             if(!tlo)
                 {
-                    rtgTlo.Fill = Brushes.Transparent;
+                    rtgTlo.Visibility = Visibility.Hidden;
+                    brdRamka.Visibility = Visibility.Hidden;
                 } else
                 {
-                    rtgTlo.Fill = Brushes.Red;
+                    rtgTlo.Visibility = Visibility.Visible;
+                    brdRamka.Visibility = Visibility.Visible;
                 }
             }
         }

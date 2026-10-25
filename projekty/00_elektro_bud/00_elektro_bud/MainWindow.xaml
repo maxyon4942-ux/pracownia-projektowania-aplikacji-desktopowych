@@ -62,7 +62,7 @@
             <Grid>
                 <Rectangle Name="rtgBrakWyszukanych" Fill="Black" Opacity="0.3" Panel.ZIndex="1"/>
                 <TextBlock Name="txtBrakWyszukanych" Text="Brak produktów spełniających kryteria wyszukiwania" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Visibility="Hidden" TextAlignment="Center" TextWrapping="Wrap" Panel.ZIndex="2" Padding="10"/>
-                <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="5">
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="0, 5">
                     <StackPanel>
                         <ItemsControl Name="itmKatalog">
                             <Grid> 

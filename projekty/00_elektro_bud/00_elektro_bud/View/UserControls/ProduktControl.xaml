@@ -17,10 +17,12 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
-        <Rectangle x:Name="rtgTlo" Fill="Transparent" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Border Panel.ZIndex="1" x:Name="brdRamka" Grid.RowSpan="2" Grid.ColumnSpan="2" BorderBrush="Silver" BorderThickness="0 2 0 2" Visibility="Hidden"/>
+        <Rectangle Visibility="Hidden" x:Name="rtgTlo" Fill="#EBF0F5" Grid.ColumnSpan="2" Grid.RowSpan="2" />
         <Label x:Name="txtNazwaTytul" Content="Nazwa Produktu:" FontWeight="Bold" VerticalAlignment="Bottom"/>
         <Label x:Name="txtEANTytul" Grid.Column="1" Content="Kod EAN Produktu:" FontWeight="Bold" VerticalAlignment="Bottom"/>
         <Label x:Name="txtNazwa" Grid.Column="0" FontSize="40" Grid.Row="1" Content="Produkt" VerticalContentAlignment="Bottom"/>
         <Label x:Name="txtEAN" Grid.Column="1" FontSize="40" Grid.Row="1" Content="0000000000000" VerticalContentAlignment="Bottom"/>
+
     </Grid>
 </UserControl>
