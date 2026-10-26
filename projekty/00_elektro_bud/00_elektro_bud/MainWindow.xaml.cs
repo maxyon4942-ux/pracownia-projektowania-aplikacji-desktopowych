@@ -33,7 +33,6 @@ namespace _00_elektro_bud
 
         private void WyswietlProdukty(List<Produkt> produkty)
         {
-            itmKatalog.Items.Clear();
             if (produkty.Count == 0)
             {
                 txtBrakWyszukanych.Visibility = Visibility.Visible;
@@ -44,7 +43,8 @@ namespace _00_elektro_bud
                 txtBrakWyszukanych.Visibility = Visibility.Hidden;
                 rtgBrakWyszukanych.Visibility = Visibility.Hidden;
             }
-            dic.Clear(); 
+            dic.Clear();
+            dic2.Clear();
             foreach (Produkt p in produkty)
             {
                 Button b = new();
